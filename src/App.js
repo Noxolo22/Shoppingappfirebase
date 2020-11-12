@@ -68,10 +68,10 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
-  // collectionsArray: selectCollectionsForPreview --- only to add data to the db
+  currentUser: selectCurrentUser// collectionsArray: selectCollectionsForPreview --- only to add data to the db
 })
 
+  
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })

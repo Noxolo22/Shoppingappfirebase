@@ -21,11 +21,11 @@ class Shop extends Component {
       <div className='shop-page'>
         <Route
           exact
-          path={`${match.path}`}
+          path={`R{match.path}`}
           component={CollectionsOverviewContainer}
         />
         <Route
-          path={`${match.path}/:collectionId`}
+          path={`R{match.path}/:collectionId`}
           component={CollectionContainer}
         />
         <Route />

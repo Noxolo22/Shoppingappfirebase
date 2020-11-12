@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
-// firebase config
+
 const firebaseConfig = {
   apiKey: 'AIzaSyC4w_WCqKb-bAUFgssyNkjE-YEXo2ri-Qs',
   authDomain: 'e-commerce-app-af2c0.firebaseapp.com',
@@ -14,16 +14,15 @@ const firebaseConfig = {
   measurementId: 'G-W2WEKMT7ET'
 }
 
-// initializes firebase
+
 firebase.initializeApp(firebaseConfig)
 
-// initializes firestore
+
 export const db = firebase.firestore()
 
-// initializes auth
+
 export const auth = firebase.auth()
 
-// creates user profile doc
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return
 
@@ -48,12 +47,12 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef
 }
 
-// Google authentication setup
+
 const provider = new firebase.auth.GoogleAuthProvider()
 provider.setCustomParameters({ prompt: 'select_account' })
 export const signInWithGoogle = () => auth.signInWithPopup(provider)
 
-// loads data to firestore (to be manually used when needed)
+
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
@@ -74,10 +73,8 @@ export const addCollectionAndDocuments = async (
 
 export const convertCollectionsSnapshotToMap = collections => {
   const transformedCollection = collections.docs.map(doc => {
-    //     console.log(doc.data())
-    //   })
-    // }
-
+    
+      //
     const { title, items } = doc.data()
 
     return {
